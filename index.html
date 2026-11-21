@@ -6,15 +6,7 @@
     <title>Ovindi Residencies | Boutique Coastal Sanctuary in Matara, Sri Lanka</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        :root {
-            --primary: #0b2538;
-            --gold: #c59d5f;
-            --gold-hover: #b0884a;
-            --light-bg: #faf9f6;
-            --white: #ffffff;
-            --text-dark: #222222;
-            --text-muted: #666666;
-        }
+        :root { --primary: #0b2538; --gold: #c59d5f; --gold-hover: #b0884a; --light-bg: #faf9f6; --white: #ffffff; --text-dark: #222222; --text-muted: #666666; }
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
@@ -85,3 +77,136 @@
         @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .nav-links { display: none; } .about-grid { grid-template-columns: 1fr; } .about-badge { right: 10px; bottom: -15px; } }
     </style>
 </head>
+<body>
+    <nav>
+        <a href="#" class="logo">OVINDI <span>RESIDENCIES</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">Sanctuary</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#explore">Matara</a></li>
+        </ul>
+        <a href="https://wa.me." class="nav-btn" target="_blank">Reserve Now</a>
+    </nav>
+
+    <header class="hero">
+        <span class="hero-subtitle">Matara • Southern Coast • Sri Lanka</span>
+        <h1>Your Private Coastal Sanctuary in Paradise</h1>
+        <p>Experience refined Sri Lankan hospitality, serene air-conditioned suites, and warm ocean breezes just moments from Matara’s pristine golden beaches.</p>
+        <div class="hero-btns">
+            <a href="#booking" class="btn-gold">Check Availability</a>
+            <a href="#gallery" class="btn-outline">Explore Rooms</a>
+        </div>
+    </header>
+
+    <div class="booking-bar-wrapper" id="booking">
+        <div class="booking-bar">
+            <div class="form-group"><label>Check-In Date</label><input type="date" id="checkin"></div>
+            <div class="form-group"><label>Check-Out Date</label><input type="date" id="checkout"></div>
+            <div class="form-group">
+                <label>Guests</label>
+                <select id="guests">
+                    <option value="1 Adult">1 Adult</option>
+                    <option value="2 Adults" selected>2 Adults</option>
+                    <option value="2 Adults, 1 Child">2 Adults, 1 Child</option>
+                    <option value="Family / Group">Family / Group</option>
+                </select>
+            </div>
+            <button onclick="bookViaWhatsApp()" class="btn-gold" style="width: 100%;">Book via WhatsApp</button>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-img">
+                <img src="2.jpg" alt="Ovindi Residencies Suite">
+                <div class="about-badge"><span>Matara</span>Beachside Comfort</div>
+            </div>
+            <div class="about-text">
+                <span class="section-tag">Welcome to Ovindi Residencies</span>
+                <h3>Where Tranquility Meets Tropical Elegance</h3>
+                <p>Nestled in a peaceful, secure residential enclave close to the Indian Ocean, Ovindi Residencies is designed for discerning travelers seeking comfort, privacy, and authentic Sri Lankan warmth.</p>
+                <p>Whether you are here to surf the famous waves of Madiha, swim with sea turtles at Polhena, or unwind in a spotless air-conditioned retreat, our dedicated hospitality ensures an unforgettable stay.</p>
+                <ul class="highlights-list">
+                    <li>Steps from Pristine Beaches</li>
+                    <li>Climate-Controlled A/C Rooms</li>
+                    <li>Private Hot Water En-Suites</li>
+                    <li>Fresh Homemade Breakfasts</li>
+                    <li>High-Speed Fiber Wi-Fi</li>
+                    <li>Airport Transfers & Tours</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="amenities-bg" id="amenities">
+        <div class="amenities-container">
+            <div class="section-header">
+                <span class="section-tag">Curated Comforts</span>
+                <h2>Signature Facilities & Services</h2>
+                <p>Every detail at Ovindi Residencies is thoughtfully prepared for your relaxation and convenience.</p>
+            </div>
+            <div class="amenities-grid">
+                <div class="amenity-card"><span class="amenity-icon">🏖️</span><h3>Prime Coastal Access</h3><p>Located just minutes from Matara’s finest beaches, surf breaks, and oceanfront dining.</p></div>
+                <div class="amenity-card"><span class="amenity-icon">❄️</span><h3>Air-Conditioned Suites</h3><p>Spacious, sunlit bedrooms featuring modern air conditioning and plush bedding.</p></div>
+                <div class="amenity-card"><span class="amenity-icon">🚿</span><h3>Modern En-Suite Baths</h3><p>Spotless private bathrooms equipped with refreshing hot water rain showers.</p></div>
+                <div class="amenity-card"><span class="amenity-icon">🍳</span><h3>Artisanal Breakfast</h3><p>Start your morning with fresh tropical fruits, traditional Sri Lankan delicacies, or Continental favorites.</p></div>
+                <div class="amenity-card"><span class="amenity-icon">📶</span><h3>High-Speed Wi-Fi</h3><p>Complimentary, seamless internet access ideal for remote work and streaming.</p></div>
+                <div class="amenity-card"><span class="amenity-icon">🛋️</span><h3>Serene Lounge & Veranda</h3><p>Unwind in our breezy living spaces surrounded by lush tropical greenery.</p></div>
+            </div>
+        </div>
+    </div>
+    <section id="gallery">
+        <div class="section-header">
+            <span class="section-tag">Visual Tour</span>
+            <h2>Inside Ovindi Residencies</h2>
+            <p>Click on any photograph to view our rooms, living areas, and facilities in full detail.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox('1.jpg')"><img src="1.jpg" alt="Room 1"></div>
+            <div class="gallery-item" onclick="openLightbox('2.jpg')"><img src="2.jpg" alt="Room 2"></div>
+            <div class="gallery-item" onclick="openLightbox('3.jpg')"><img src="3.jpg" alt="Room 3"></div>
+            <div class="gallery-item" onclick="openLightbox('4.jpg')"><img src="4.jpg" alt="Living Space"></div>
+            <div class="gallery-item" onclick="openLightbox('5.jpg')"><img src="5.jpg" alt="Suite"></div>
+            <div class="gallery-item" onclick="openLightbox('6.jpg')"><img src="6.jpg" alt="Bathroom"></div>
+            <div class="gallery-item" onclick="openLightbox('7.jpg')"><img src="7.jpg" alt="Comfort"></div>
+            <div class="gallery-item" onclick="openLightbox('8.jpg')"><img src="8.jpg" alt="View"></div>
+            <div class="gallery-item" onclick="openLightbox('10.jpg')"><img src="10.jpg" alt="Property"></div>
+        </div>
+    </section>
+
+    <section id="explore" style="padding-top: 0;">
+        <div class="section-header"><span class="section-tag">Discover Southern Sri Lanka</span><h2>Moments Away From Adventure</h2></div>
+        <div class="explore-grid">
+            <div class="explore-card"><span class="explore-time">5 Mins Away</span><h4>Polhena Coral Reef & Beach</h4><p>Swim and snorkel alongside giant sea turtles in calm, crystal-clear reef waters.</p></div>
+            <div class="explore-card"><span class="explore-time">8 Mins Away</span><h4>Madiha Surf Point</h4><p>World-renowned surf breaks, laid-back beach cafes, and breathtaking Indian Ocean sunsets.</p></div>
+            <div class="explore-card"><span class="explore-time">10 Mins Away</span><h4>Paravi Duwa & Dutch Star Fort</h4><p>Explore Matara’s iconic ocean-bridge temple and rich colonial heritage sites.</p></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col"><a href="#" class="logo">OVINDI <span>RESIDENCIES</span></a><p style="margin-top: 15px;">A boutique coastal retreat offering warmth, cleanliness, and comfort in the heart of Matara, Sri Lanka.</p></div>
+            <div class="footer-col"><h4>Direct Reservations</h4><p>📞 WhatsApp / Call: +94 74 251 0522</p><p>📍 Location: Matara, Southern Province, Sri Lanka</p><p>🕒 Check-in: 2:00 PM | Check-out: 11:00 AM</p></div>
+            <div class="footer-col"><h4>Guest Services</h4><p>• Bandaranaike Airport (CMB) Transfers</p><p>• Private Tuk-Tuk & Safari Excursions</p><p>• Surfboard Rentals & Local Guides</p></div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Ovindi Residencies Matara. All Rights Reserved.</div>
+    </footer>
+
+    <a href="https://wa.me." class="whatsapp-float" target="_blank">💬 Chat with Concierge</a>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()"><span class="lightbox-close">&times;</span><img id="lightbox-img" src="" alt="Full View"></div>
+
+    <script>
+        function bookViaWhatsApp() {
+            const checkin = document.getElementById('checkin').value || 'Flexible';
+            const checkout = document.getElementById('checkout').value || 'Flexible';
+            const guests = document.getElementById('guests').value;
+            const message = `Hello Ovindi Residencies! I would like to check room availability:%0A- Check-in: ${checkin}%0A- Check-out: ${checkout}%0A- Guests: ${guests}`;
+            window.open(`https://wa.me{message}`, '_blank');
+        }
+        function openLightbox(src) { document.getElementById('lightbox-img').src = src; document.getElementById('lightbox').style.display = 'flex'; }
+        function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+    </script>
+</body>
+</html>
