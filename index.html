@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ovindi Residencies | Boutique Coastal Sanctuary in Matara, Sri Lanka</title>
+    <title>Ovindi Residencies | Boutique Coastal Sanctuary in Tangalle, Sri Lanka</title>
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
         :root { --primary: #0b2538; --gold: #c59d5f; --gold-hover: #b0884a; --light-bg: #faf9f6; --white: #ffffff; --text-dark: #222222; --text-muted: #666666; }
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
-        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
         
         /* Navigation */
         nav { position: fixed; top: 0; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(11, 37, 56, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(197, 157, 95, 0.2); }
@@ -29,25 +29,26 @@
         .hero h1 { font-size: 4rem; max-width: 900px; line-height: 1.15; margin-bottom: 20px; font-weight: 700; }
         .hero p { font-size: 1.15rem; max-width: 650px; margin-bottom: 35px; color: #e0e0e0; font-weight: 300; }
         .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-        .btn-gold { background: var(--gold); color: var(--white); padding: 15px 35px; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; font-weight: 500; border-radius: 3px; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-gold { background: var(--gold); color: var(--white); padding: 15px 35px; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; font-weight: 500; border-radius: 3px; transition: 0.3s; border: none; cursor: pointer; display: inline-block; }
         .btn-gold:hover { background: var(--gold-hover); transform: translateY(-2px); }
         .btn-outline { background: transparent; color: var(--white); padding: 15px 35px; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; border: 1px solid var(--white); border-radius: 3px; transition: 0.3s; }
         .btn-outline:hover { background: var(--white); color: var(--primary); }
 
-        /* Booking Bar */
-        .booking-bar-wrapper { max-width: 1050px; margin: -55px auto 60px auto; padding: 0 20px; position: relative; z-index: 10; }
+        /* Booking Bar & Offer Banner */
+        .booking-bar-wrapper { max-width: 1050px; margin: -55px auto 40px auto; padding: 0 20px; position: relative; z-index: 10; }
         .booking-bar { background: var(--white); padding: 30px; border-radius: 6px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; align-items: end; border-top: 3px solid var(--gold); }
         .form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
         .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Poppins', sans-serif; font-size: 0.95rem; color: var(--text-dark); }
-
-        /* Sections */
+        .offer-banner { max-width: 1010px; margin: 0 auto 60px auto; background: linear-gradient(135deg, var(--primary) 0%, #153c59 100%); color: var(--white); padding: 35px 40px; border-radius: 8px; border: 2px solid var(--gold); display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; box-shadow: 0 15px 35px rgba(11, 37, 56, 0.15); }
+        .offer-badge { background: var(--gold); color: var(--white); padding: 5px 14px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
+        .offer-content h3 { font-size: 1.8rem; color: var(--gold); margin-bottom: 8px; }
+        .offer-content p { color: #e2e8f0; font-size: 0.98rem; max-width: 620px; }
+        /* Sections & About */
         section { padding: 80px 5%; max-width: 1250px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 55px; }
         .section-tag { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 10px; }
         .section-header h2 { font-size: 2.6rem; color: var(--primary); margin-bottom: 15px; }
         .section-header p { max-width: 650px; margin: 0 auto; color: var(--text-muted); }
-
-        /* About */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .about-img { position: relative; }
         .about-img img { width: 100%; height: 450px; object-fit: cover; border-radius: 6px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
@@ -59,7 +60,7 @@
         .highlights-list li { font-size: 0.95rem; color: var(--primary); font-weight: 500; }
         .highlights-list li::before { content: "✦ "; color: var(--gold); }
 
-        /* Amenities */
+        /* Amenities & Gallery */
         .amenities-bg { background: var(--primary); color: var(--white); max-width: 100%; padding: 90px 5%; }
         .amenities-container { max-width: 1200px; margin: 0 auto; }
         .amenities-bg .section-header h2 { color: var(--white); }
@@ -70,8 +71,6 @@
         .amenity-icon { font-size: 2rem; margin-bottom: 15px; display: block; }
         .amenity-card h3 { color: var(--gold); font-size: 1.3rem; margin-bottom: 10px; }
         .amenity-card p { color: #cbd5e1; font-size: 0.92rem; }
-
-        /* Gallery & Lightbox */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
         .gallery-item { position: relative; overflow: hidden; border-radius: 6px; height: 280px; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
@@ -80,31 +79,27 @@
         .lightbox img { max-width: 90%; max-height: 85vh; border-radius: 4px; border: 2px solid var(--gold); }
         .lightbox-close { position: absolute; top: 25px; right: 35px; color: var(--white); font-size: 2.5rem; cursor: pointer; }
 
-        /* Explore */
+        /* Explore, Footer & Mobile */
         .explore-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
         .explore-card { background: var(--white); padding: 30px; border-radius: 6px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-left: 4px solid var(--gold); }
-        .explore-card h4 { color: var(--primary); font-size: 1.2rem; margin-bottom: 8px; }
-        .explore-time { color: var(--gold); font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; display: block; }
-
-        /* Footer */
-        footer { background: #071926; color: #cbd5e1; padding: 70px 5% 30px 5%; }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .footer-col h4 { color: var(--gold); margin-bottom: 18px; font-size: 1.15rem; }
-        .footer-col p { font-size: 0.92rem; margin-bottom: 10px; color: #cbd5e1; }
-        .footer-col a { color: #cbd5e1; text-decoration: none; transition: 0.3s; }
+        .explore-time { font-size: 0.8rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px; }
+        .explore-card h4 { color: var(--primary); font-size: 1.25rem; margin-bottom: 10px; }
+        .explore-card p { color: var(--text-muted); font-size: 0.92rem; }
+        footer { background: var(--primary); color: #cbd5e1; padding: 70px 5% 30px; border-top: 3px solid var(--gold); }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { color: var(--gold); font-size: 1.2rem; margin-bottom: 20px; }
+        .footer-col p { margin-bottom: 10px; font-size: 0.92rem; }
+        .footer-col a { color: var(--white); text-decoration: none; transition: 0.3s; }
         .footer-col a:hover { color: var(--gold); }
-        .footer-bottom { text-align: center; padding-top: 25px; font-size: 0.85rem; color: #8899a6; }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #ffffff; padding: 14px 22px; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 0.9rem; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35); z-index: 1500; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
-        .whatsapp-float:hover { background: #1ebe5d; transform: translateY(-3px); }
-
-        /* Mobile Responsive */
+        .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; }
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: var(--white); padding: 14px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); z-index: 1500; transition: 0.3s; }
+        .whatsapp-float:hover { transform: translateY(-3px); background: #20bd5a; }
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero h1 { font-size: 2.5rem; }
             .about-grid { grid-template-columns: 1fr; }
             .about-badge { right: 10px; bottom: -15px; padding: 15px; }
+            .offer-banner { margin: 0 20px 50px 20px; padding: 25px; }
         }
     </style>
 </head>
@@ -116,15 +111,15 @@
             <li><a href="#about">About</a></li>
             <li><a href="#amenities">Facilities</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#explore">Explore</a></li>
+            <li><a href="#explore">Explore & Transport</a></li>
         </ul>
         <a href="#booking" class="nav-btn">Book Now</a>
     </nav>
 
     <header class="hero">
-        <span class="hero-subtitle">Matara • Southern Coast • Sri Lanka</span>
+        <span class="hero-subtitle">Tangalle • Southern Coast • Sri Lanka</span>
         <h1>Boutique Coastal Sanctuary</h1>
-        <p>Experience serene luxury, tropical elegance, and authentic Sri Lankan hospitality steps away from the Indian Ocean.</p>
+        <p>Experience serene luxury, tropical elegance, and authentic Sri Lankan hospitality steps away from the Indian Ocean in Tangalle.</p>
         <div class="hero-btns">
             <a href="#booking" class="btn-gold">Check Availability</a>
             <a href="#gallery" class="btn-outline">Explore Rooms</a>
@@ -148,46 +143,55 @@
         </div>
     </div>
 
+    <div class="offer-banner">
+        <div class="offer-content">
+            <span class="offer-badge">Exclusive Direct Arrival Offer</span>
+            <h3>Airport Transfer + FREE Dinner & Breakfast — LKR 25,000</h3>
+            <p>Arriving directly from Bandaranaike International Airport (CMB) to Tangalle? Enjoy a comfortable private airport pickup for just <strong>LKR 25,000</strong> and receive <strong>complimentary Dinner & Breakfast</strong> during your stay!</p>
+        </div>
+        <a href="https://wa.me." target="_blank" class="btn-gold">Claim Offer</a>
+    </div>
+
     <section id="about">
         <div class="about-grid">
             <div class="about-img">
-                <img src="2.jpg" alt="Ovindi Residencies Suite">
-                <div class="about-badge"><span>Matara</span>Beachside Comfort</div>
+                <img src="2.jpg" alt="Ovindi Residencies Suite Tangalle">
+                <div class="about-badge"><span>Tangalle</span>Beachside Comfort</div>
             </div>
             <div class="about-text">
                 <span class="section-tag">Welcome to Ovindi Residencies</span>
                 <h3>Where Tranquility Meets Tropical Elegance</h3>
-                <p>Nestled in a peaceful, secure residential enclave close to the Indian Ocean, Ovindi Residencies is designed for discerning travelers seeking comfort, privacy, and authentic Sri Lankan warmth.</p>
-                <p>Whether you are here to surf the famous waves of Madiha, swim with sea turtles at Polhena, or embark on a wildlife safari to Yala, our dedicated hospitality ensures an unforgettable stay.</p>
+                <p>Nestled in a peaceful, secure residential enclave in Tangalle close to the Indian Ocean, Ovindi Residencies is designed for discerning travelers seeking comfort, privacy, and authentic Sri Lankan warmth.</p>
+                <p>Whether you want to relax on Tangalle's golden beaches, or take advantage of our <strong>low-cost discounted private transport</strong> to surf at Madiha & Ahangama, swim with turtles at Polhena, or go on a Yala safari, we take care of every detail.</p>
                 <ul class="highlights-list">
-                    <li>Steps from Pristine Beaches</li>
+                    <li>Prime Tangalle Coastal Location</li>
                     <li>Climate-Controlled A/C Rooms</li>
-                    <li>Private Hot Water En-Suites</li>
-                    <li>Fresh Homemade Breakfasts</li>
-                    <li>High-Speed Fiber Wi-Fi</li>
+                    <li>FREE Dinner & Breakfast (Airport Offer)</li>
+                    <li>Low-Cost Transport to Polhena & Madiha</li>
+                    <li>Discounted Rides to Ahangama</li>
                     <li>Yala Safari & Airport Transfers</li>
                 </ul>
             </div>
         </div>
     </section>
-
     <div class="amenities-bg" id="amenities">
         <div class="amenities-container">
             <div class="section-header">
                 <span class="section-tag">Curated Comforts</span>
                 <h2>Signature Facilities & Services</h2>
-                <p>Every detail at Ovindi Residencies is thoughtfully prepared for your relaxation and convenience.</p>
+                <p>Every detail at Ovindi Residencies Tangalle is thoughtfully prepared for your relaxation and convenience.</p>
             </div>
             <div class="amenities-grid">
-                <div class="amenity-card"><span class="amenity-icon">🏖️</span><h3>Prime Coastal Access</h3><p>Located just minutes from Matara’s finest beaches, surf breaks, and oceanfront dining.</p></div>
+                <div class="amenity-card"><span class="amenity-icon">✈️</span><h3>LKR 25,000 Airport Package</h3><p>Direct transfer from BIA Airport to Tangalle for LKR 25,000 with <strong>complimentary Dinner & Breakfast</strong> included.</p></div>
+                <div class="amenity-card"><span class="amenity-icon">🚗</span><h3>Low-Cost Coastal Transport</h3><p>Affordable, discounted private rides from Tangalle to Polhena, Madiha, Ahangama, and nearby surf spots.</p></div>
                 <div class="amenity-card"><span class="amenity-icon">❄️</span><h3>Air-Conditioned Suites</h3><p>Spacious, sunlit bedrooms featuring modern air conditioning and plush bedding.</p></div>
-                <div class="amenity-card"><span class="amenity-icon">🚿</span><h3>Modern En-Suite Baths</h3><p>Spotless private bathrooms equipped with refreshing hot water rain showers.</p></div>
-                <div class="amenity-card"><span class="amenity-icon">🍳</span><h3>Artisanal Breakfast</h3><p>Start your morning with fresh tropical fruits, traditional Sri Lankan delicacies, or Continental favorites.</p></div>
-                <div class="amenity-card"><span class="amenity-icon">🦁</span><h3>Yala Safari & Excursions</h3><p>Full-day and half-day 4x4 jeep safaris to Yala National Park and cultural trips to Kataragama arranged on request.</p></div>
-                <div class="amenity-card"><span class="amenity-icon">📶</span><h3>High-Speed Wi-Fi & Lounge</h3><p>Complimentary fiber internet ideal for remote work, alongside breezy living spaces surrounded by greenery.</p></div>
+                <div class="amenity-card"><span class="amenity-icon">🍽️</span><h3>Complimentary Dining</h3><p>Enjoy fresh homemade Sri Lankan or Continental Dinner & Breakfast (Free with our direct airport transfer package).</p></div>
+                <div class="amenity-card"><span class="amenity-icon">🦁</span><h3>Yala Safari & Excursions</h3><p>4x4 jeep safaris to Yala National Park and cultural trips to Kataragama arranged at special guest rates.</p></div>
+                <div class="amenity-card"><span class="amenity-icon">📶</span><h3>High-Speed Wi-Fi & Hot Water</h3><p>Complimentary fiber internet, spotless en-suite rain showers, and peaceful tropical surroundings.</p></div>
             </div>
         </div>
     </div>
+
     <section id="gallery">
         <div class="section-header">
             <span class="section-tag">Visual Tour</span>
@@ -208,27 +212,31 @@
     </section>
 
     <section id="explore" style="padding-top: 0;">
-        <div class="section-header"><span class="section-tag">Discover Southern Sri Lanka</span><h2>Moments Away From Adventure</h2></div>
+        <div class="section-header">
+            <span class="section-tag">Explore Southern Sri Lanka</span>
+            <h2>Discounted Transport to Top Destinations</h2>
+            <p>Stay in peaceful Tangalle and visit famous southern beaches with our special low-cost guest transport service.</p>
+        </div>
         <div class="explore-grid">
             <div class="explore-card">
-                <span class="explore-time">5 Mins Away</span>
+                <span class="explore-time">Low-Cost Transport Available</span>
                 <h4>Polhena Coral Reef & Beach</h4>
-                <p>Swim and snorkel alongside giant sea turtles in calm, crystal-clear reef waters.</p>
+                <p>Want to swim and snorkel alongside giant sea turtles? We arrange affordable, discounted transport from Tangalle directly to Polhena.</p>
             </div>
             <div class="explore-card">
-                <span class="explore-time">8 Mins Away</span>
+                <span class="explore-time">Low-Cost Transport Available</span>
                 <h4>Madiha Surf Point</h4>
-                <p>World-renowned surf breaks, laid-back beach cafes, and breathtaking Indian Ocean sunsets.</p>
+                <p>Experience world-renowned surf breaks and laid-back beach cafes. Ask us for our budget-friendly private rides to Madiha.</p>
             </div>
             <div class="explore-card">
-                <span class="explore-time">10 Mins Away</span>
-                <h4>Paravi Duwa & Dutch Star Fort</h4>
-                <p>Explore Matara’s iconic ocean-bridge temple and rich colonial heritage sites.</p>
+                <span class="explore-time">Low-Cost Transport Available</span>
+                <h4>Ahangama Beach & Surfing</h4>
+                <p>Planning a day trip to Ahangama's famous surf spots and stilt fishermen? We offer discounted drop-offs and round-trip transport.</p>
             </div>
             <div class="explore-card">
-                <span class="explore-time">~120 km • 1 Hr 50 Mins (Via Expressway)</span>
+                <span class="explore-time">Special Safari Packages</span>
                 <h4>Yala Safari & Kataragama</h4>
-                <p>Experience thrilling 4x4 leopard & elephant safaris at Yala National Park and visit the sacred Kataragama temple. Full transport & safari packages arranged.</p>
+                <p>Experience thrilling 4x4 leopard & elephant safaris at Yala National Park and visit the sacred Kataragama temple with full transport arranged.</p>
             </div>
         </div>
     </section>
@@ -237,27 +245,27 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <a href="#" class="logo">OVINDI <span>RESIDENCIES</span></a>
-                <p style="margin-top: 15px;">A boutique coastal retreat offering warmth, cleanliness, and comfort in the heart of Matara, Sri Lanka.</p>
+                <p style="margin-top: 15px;">A boutique coastal retreat offering warmth, cleanliness, and comfort in Tangalle, Sri Lanka.</p>
             </div>
             <div class="footer-col">
                 <h4>Direct Reservations</h4>
                 <p>📞 WhatsApp / Call 1: <a href="https://wa.me" target="_blank">+94 77 721 1784</a></p>
                 <p>📞 WhatsApp / Call 2: <a href="https://wa.me" target="_blank">+94 71 479 3555</a></p>
-                <p>📍 Location: Matara, Southern Province, Sri Lanka</p>
+                <p>📍 Location: Tangalle, Southern Province, Sri Lanka</p>
                 <p>🕒 Check-in: 2:00 PM | Check-out: 11:00 AM</p>
             </div>
             <div class="footer-col">
-                <h4>Guest Services</h4>
-                <p>• Bandaranaike Airport (CMB) Transfers</p>
+                <h4>Guest Services & Offers</h4>
+                <p>• LKR 25,000 Airport (CMB) Pickup + FREE Dinner & Breakfast</p>
+                <p>• Discounted Transport to Polhena, Madiha & Ahangama</p>
                 <p>• Yala National Park 4x4 Safari Arrangements</p>
                 <p>• Kataragama & Southern Coast Private Tours</p>
-                <p>• Surfboard Rentals & Local Guides</p>
             </div>
         </div>
-        <div class="footer-bottom">&copy; 2026 Ovindi Residencies Matara. All Rights Reserved.</div>
+        <div class="footer-bottom">&copy; 2026 Ovindi Residencies Tangalle. All Rights Reserved.</div>
     </footer>
 
-    <a href="https://wa.me?text=Hello%20Ovindi%20Residencies!%20I%20would%20like%20to%20inquire%20about%20a%20stay%20or%20safari%20arrangements." class="whatsapp-float" target="_blank">💬 Chat with Concierge</a>
+    <a href="https://wa.me?text=Hello%20Ovindi%20Residencies%20Tangalle!%20I%20would%20like%20to%20inquire%20about%20a%20stay%20or%20transport%20arrangements." class="whatsapp-float" target="_blank">💬 Chat with Concierge</a>
 
     <div class="lightbox" id="lightbox" onclick="closeLightbox()"><span class="lightbox-close">&times;</span><img id="lightbox-img" src="" alt="Full View"></div>
 
@@ -266,7 +274,7 @@
             const checkin = document.getElementById('checkin').value || 'Flexible';
             const checkout = document.getElementById('checkout').value || 'Flexible';
             const guests = document.getElementById('guests').value;
-            const message = `Hello Ovindi Residencies! I would like to check room availability:%0A- Check-in: ${checkin}%0A- Check-out: ${checkout}%0A- Guests: ${guests}`;
+            const message = `Hello Ovindi Residencies Tangalle! I would like to check room availability:%0A- Check-in: ${checkin}%0A- Check-out: ${checkout}%0A- Guests: ${guests}`;
             window.open(`https://wa.me?text=${message}`, '_blank');
         }
         function openLightbox(src) { document.getElementById('lightbox-img').src = src; document.getElementById('lightbox').style.display = 'flex'; }
