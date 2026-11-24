@@ -1,284 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ovindi Residencies | Boutique Coastal Sanctuary in Tangalle, Sri Lanka</title>
+    <title>Ovindee Residence | Luxury Boutique Homestay in Tangalle, Sri Lanka</title>
+    <script src="https://tailwindcss.com"></script>
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #0b2538; --gold: #c59d5f; --gold-hover: #b0884a; --light-bg: #faf9f6; --white: #ffffff; --text-dark: #222222; --text-muted: #666666; }
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
-        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
-        
-        /* Navigation */
-        nav { position: fixed; top: 0; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(11, 37, 56, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(197, 157, 95, 0.2); }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--white); letter-spacing: 1.5px; text-decoration: none; }
-        .logo span { color: var(--gold); }
-        .nav-links { display: flex; gap: 30px; list-style: none; }
-        .nav-links a { color: var(--white); text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--gold); }
-        .nav-btn { background: var(--gold); color: var(--white); padding: 10px 22px; border-radius: 3px; text-decoration: none; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-        .nav-btn:hover { background: var(--gold-hover); }
-
-        /* Hero Section */
-        .hero { height: 100vh; min-height: 650px; background: linear-gradient(rgba(11, 37, 56, 0.55), rgba(11, 37, 56, 0.75)), url('1.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: var(--white); padding: 0 20px; }
-        .hero-subtitle { color: var(--gold); text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 15px; font-weight: 500; }
-        .hero h1 { font-size: 4rem; max-width: 900px; line-height: 1.15; margin-bottom: 20px; font-weight: 700; }
-        .hero p { font-size: 1.15rem; max-width: 650px; margin-bottom: 35px; color: #e0e0e0; font-weight: 300; }
-        .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-        .btn-gold { background: var(--gold); color: var(--white); padding: 15px 35px; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; font-weight: 500; border-radius: 3px; transition: 0.3s; border: none; cursor: pointer; display: inline-block; }
-        .btn-gold:hover { background: var(--gold-hover); transform: translateY(-2px); }
-        .btn-outline { background: transparent; color: var(--white); padding: 15px 35px; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; border: 1px solid var(--white); border-radius: 3px; transition: 0.3s; }
-        .btn-outline:hover { background: var(--white); color: var(--primary); }
-
-        /* Booking Bar & Offer Banner */
-        .booking-bar-wrapper { max-width: 1050px; margin: -55px auto 40px auto; padding: 0 20px; position: relative; z-index: 10; }
-        .booking-bar { background: var(--white); padding: 30px; border-radius: 6px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; align-items: end; border-top: 3px solid var(--gold); }
-        .form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
-        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Poppins', sans-serif; font-size: 0.95rem; color: var(--text-dark); }
-        .offer-banner { max-width: 1010px; margin: 0 auto 60px auto; background: linear-gradient(135deg, var(--primary) 0%, #153c59 100%); color: var(--white); padding: 35px 40px; border-radius: 8px; border: 2px solid var(--gold); display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; box-shadow: 0 15px 35px rgba(11, 37, 56, 0.15); }
-        .offer-badge { background: var(--gold); color: var(--white); padding: 5px 14px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
-        .offer-content h3 { font-size: 1.8rem; color: var(--gold); margin-bottom: 8px; }
-        .offer-content p { color: #e2e8f0; font-size: 0.98rem; max-width: 620px; }
-        /* Sections & About */
-        section { padding: 80px 5%; max-width: 1250px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 55px; }
-        .section-tag { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 10px; }
-        .section-header h2 { font-size: 2.6rem; color: var(--primary); margin-bottom: 15px; }
-        .section-header p { max-width: 650px; margin: 0 auto; color: var(--text-muted); }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .about-img { position: relative; }
-        .about-img img { width: 100%; height: 450px; object-fit: cover; border-radius: 6px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .about-badge { position: absolute; bottom: -20px; right: -20px; background: var(--primary); color: var(--white); padding: 25px; border-radius: 6px; border-bottom: 4px solid var(--gold); text-align: center; }
-        .about-badge span { display: block; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); font-weight: 700; }
-        .about-text h3 { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
-        .about-text p { color: var(--text-muted); margin-bottom: 20px; }
-        .highlights-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 25px; }
-        .highlights-list li { font-size: 0.95rem; color: var(--primary); font-weight: 500; }
-        .highlights-list li::before { content: "✦ "; color: var(--gold); }
-
-        /* Amenities & Gallery */
-        .amenities-bg { background: var(--primary); color: var(--white); max-width: 100%; padding: 90px 5%; }
-        .amenities-container { max-width: 1200px; margin: 0 auto; }
-        .amenities-bg .section-header h2 { color: var(--white); }
-        .amenities-bg .section-header p { color: #cbd5e1; }
-        .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .amenity-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(197, 157, 95, 0.25); padding: 35px 25px; border-radius: 6px; transition: 0.3s; }
-        .amenity-card:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px); }
-        .amenity-icon { font-size: 2rem; margin-bottom: 15px; display: block; }
-        .amenity-card h3 { color: var(--gold); font-size: 1.3rem; margin-bottom: 10px; }
-        .amenity-card p { color: #cbd5e1; font-size: 0.92rem; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-        .gallery-item { position: relative; overflow: hidden; border-radius: 6px; height: 280px; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .gallery-item:hover img { transform: scale(1.08); }
-        .lightbox { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; padding: 20px; }
-        .lightbox img { max-width: 90%; max-height: 85vh; border-radius: 4px; border: 2px solid var(--gold); }
-        .lightbox-close { position: absolute; top: 25px; right: 35px; color: var(--white); font-size: 2.5rem; cursor: pointer; }
-
-        /* Explore, Footer & Mobile */
-        .explore-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-        .explore-card { background: var(--white); padding: 30px; border-radius: 6px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-left: 4px solid var(--gold); }
-        .explore-time { font-size: 0.8rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px; }
-        .explore-card h4 { color: var(--primary); font-size: 1.25rem; margin-bottom: 10px; }
-        .explore-card p { color: var(--text-muted); font-size: 0.92rem; }
-        footer { background: var(--primary); color: #cbd5e1; padding: 70px 5% 30px; border-top: 3px solid var(--gold); }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .footer-col h4 { color: var(--gold); font-size: 1.2rem; margin-bottom: 20px; }
-        .footer-col p { margin-bottom: 10px; font-size: 0.92rem; }
-        .footer-col a { color: var(--white); text-decoration: none; transition: 0.3s; }
-        .footer-col a:hover { color: var(--gold); }
-        .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; }
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: var(--white); padding: 14px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); z-index: 1500; transition: 0.3s; }
-        .whatsapp-float:hover { transform: translateY(-3px); background: #20bd5a; }
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.5rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .about-badge { right: 10px; bottom: -15px; padding: 15px; }
-            .offer-banner { margin: 0 20px 50px 20px; padding: 25px; }
-        }
+        body { font-family: 'Montserrat', sans-serif; background-color: #FAF9F6; color: #1C1917; }
+        h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
+        .gold-text { color: #B48E43; }
+        .gold-bg { background-color: #B48E43; }
+        .gold-border { border-color: #B48E43; }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.75)); }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <nav>
-        <a href="#" class="logo">OVINDI <span>RESIDENCIES</span></a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#amenities">Facilities</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#explore">Explore & Transport</a></li>
-        </ul>
-        <a href="#booking" class="nav-btn">Book Now</a>
-    </nav>
-
-    <header class="hero">
-        <span class="hero-subtitle">Tangalle • Southern Coast • Sri Lanka</span>
-        <h1>Boutique Coastal Sanctuary</h1>
-        <p>Experience serene luxury, tropical elegance, and authentic Sri Lankan hospitality steps away from the Indian Ocean in Tangalle.</p>
-        <div class="hero-btns">
-            <a href="#booking" class="btn-gold">Check Availability</a>
-            <a href="#gallery" class="btn-outline">Explore Rooms</a>
+    <!-- Top Navigation -->
+    <header class="fixed w-full z-50 bg-stone-950/90 backdrop-blur-md text-white border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <a href="#" class="serif text-2xl md:text-3xl tracking-widest uppercase font-semibold text-amber-400">Ovindee</a>
+                <span class="block text-[10px] tracking-[0.35em] uppercase text-stone-300">Residence • Tangalle</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-widest text-stone-300">
+                <a href="#about" class="hover:text-amber-400 transition">The Sanctuary</a>
+                <a href="#rooms" class="hover:text-amber-400 transition">Suites & Bath</a>
+                <a href="#amenities" class="hover:text-amber-400 transition">Amenities</a>
+                <a href="#gallery" class="hover:text-amber-400 transition">Gallery</a>
+            </nav>
+            <a href="#book" class="gold-bg hover:bg-amber-600 text-stone-950 font-semibold text-xs uppercase tracking-widest px-5 py-3 transition">
+                Reserve Now
+            </a>
         </div>
     </header>
-
-    <div class="booking-bar-wrapper" id="booking">
-        <div class="booking-bar">
-            <div class="form-group"><label>Check-In Date</label><input type="date" id="checkin"></div>
-            <div class="form-group"><label>Check-Out Date</label><input type="date" id="checkout"></div>
-            <div class="form-group">
-                <label>Guests</label>
-                <select id="guests">
-                    <option value="1 Adult">1 Adult</option>
-                    <option value="2 Adults" selected>2 Adults</option>
-                    <option value="2 Adults, 1 Child">2 Adults, 1 Child</option>
-                    <option value="Family / Group">Family / Group</option>
-                </select>
-            </div>
-            <button onclick="bookViaWhatsApp()" class="btn-gold" style="width: 100%;">Book via WhatsApp</button>
-        </div>
-    </div>
-
-    <div class="offer-banner">
-        <div class="offer-content">
-            <span class="offer-badge">Exclusive Direct Arrival Offer</span>
-            <h3>Airport Transfer + FREE Dinner & Breakfast — LKR 25,000</h3>
-            <p>Arriving directly from Bandaranaike International Airport (CMB) to Tangalle? Enjoy a comfortable private airport pickup for just <strong>LKR 25,000</strong> and receive <strong>complimentary Dinner & Breakfast</strong> during your stay!</p>
-        </div>
-        <a href="https://wa.me." target="_blank" class="btn-gold">Claim Offer</a>
-    </div>
-
-    <section id="about">
-        <div class="about-grid">
-            <div class="about-img">
-                <img src="2.jpg" alt="Ovindi Residencies Suite Tangalle">
-                <div class="about-badge"><span>Tangalle</span>Beachside Comfort</div>
-            </div>
-            <div class="about-text">
-                <span class="section-tag">Welcome to Ovindi Residencies</span>
-                <h3>Where Tranquility Meets Tropical Elegance</h3>
-                <p>Nestled in a peaceful, secure residential enclave in Tangalle close to the Indian Ocean, Ovindi Residencies is designed for discerning travelers seeking comfort, privacy, and authentic Sri Lankan warmth.</p>
-                <p>Whether you want to relax on Tangalle's golden beaches, or take advantage of our <strong>low-cost discounted private transport</strong> to surf at Madiha & Ahangama, swim with turtles at Polhena, or go on a Yala safari, we take care of every detail.</p>
-                <ul class="highlights-list">
-                    <li>Prime Tangalle Coastal Location</li>
-                    <li>Climate-Controlled A/C Rooms</li>
-                    <li>FREE Dinner & Breakfast (Airport Offer)</li>
-                    <li>Low-Cost Transport to Polhena & Madiha</li>
-                    <li>Discounted Rides to Ahangama</li>
-                    <li>Yala Safari & Airport Transfers</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <div class="amenities-bg" id="amenities">
-        <div class="amenities-container">
-            <div class="section-header">
-                <span class="section-tag">Curated Comforts</span>
-                <h2>Signature Facilities & Services</h2>
-                <p>Every detail at Ovindi Residencies Tangalle is thoughtfully prepared for your relaxation and convenience.</p>
-            </div>
-            <div class="amenities-grid">
-                <div class="amenity-card"><span class="amenity-icon">✈️</span><h3>LKR 25,000 Airport Package</h3><p>Direct transfer from BIA Airport to Tangalle for LKR 25,000 with <strong>complimentary Dinner & Breakfast</strong> included.</p></div>
-                <div class="amenity-card"><span class="amenity-icon">🚗</span><h3>Low-Cost Coastal Transport</h3><p>Affordable, discounted private rides from Tangalle to Polhena, Madiha, Ahangama, and nearby surf spots.</p></div>
-                <div class="amenity-card"><span class="amenity-icon">❄️</span><h3>Air-Conditioned Suites</h3><p>Spacious, sunlit bedrooms featuring modern air conditioning and plush bedding.</p></div>
-                <div class="amenity-card"><span class="amenity-icon">🍽️</span><h3>Complimentary Dining</h3><p>Enjoy fresh homemade Sri Lankan or Continental Dinner & Breakfast (Free with our direct airport transfer package).</p></div>
-                <div class="amenity-card"><span class="amenity-icon">🦁</span><h3>Yala Safari & Excursions</h3><p>4x4 jeep safaris to Yala National Park and cultural trips to Kataragama arranged at special guest rates.</p></div>
-                <div class="amenity-card"><span class="amenity-icon">📶</span><h3>High-Speed Wi-Fi & Hot Water</h3><p>Complimentary fiber internet, spotless en-suite rain showers, and peaceful tropical surroundings.</p></div>
-            </div>
-        </div>
-    </div>
-
-    <section id="gallery">
-        <div class="section-header">
-            <span class="section-tag">Visual Tour</span>
-            <h2>Inside Ovindi Residencies</h2>
-            <p>Click on any photograph to view our rooms, living areas, and facilities in full detail.</p>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox('1.jpg')"><img src="1.jpg" alt="Room 1"></div>
-            <div class="gallery-item" onclick="openLightbox('2.jpg')"><img src="2.jpg" alt="Room 2"></div>
-            <div class="gallery-item" onclick="openLightbox('3.jpg')"><img src="3.jpg" alt="Room 3"></div>
-            <div class="gallery-item" onclick="openLightbox('4.jpg')"><img src="4.jpg" alt="Living Space"></div>
-            <div class="gallery-item" onclick="openLightbox('5.jpg')"><img src="5.jpg" alt="Suite"></div>
-            <div class="gallery-item" onclick="openLightbox('6.jpg')"><img src="6.jpg" alt="Bathroom"></div>
-            <div class="gallery-item" onclick="openLightbox('7.jpg')"><img src="7.jpg" alt="Comfort"></div>
-            <div class="gallery-item" onclick="openLightbox('8.jpg')"><img src="8.jpg" alt="View"></div>
-            <div class="gallery-item" onclick="openLightbox('10.jpg')"><img src="10.jpg" alt="Property"></div>
-        </div>
-    </section>
-
-    <section id="explore" style="padding-top: 0;">
-        <div class="section-header">
-            <span class="section-tag">Explore Southern Sri Lanka</span>
-            <h2>Discounted Transport to Top Destinations</h2>
-            <p>Stay in peaceful Tangalle and visit famous southern beaches with our special low-cost guest transport service.</p>
-        </div>
-        <div class="explore-grid">
-            <div class="explore-card">
-                <span class="explore-time">Low-Cost Transport Available</span>
-                <h4>Polhena Coral Reef & Beach</h4>
-                <p>Want to swim and snorkel alongside giant sea turtles? We arrange affordable, discounted transport from Tangalle directly to Polhena.</p>
-            </div>
-            <div class="explore-card">
-                <span class="explore-time">Low-Cost Transport Available</span>
-                <h4>Madiha Surf Point</h4>
-                <p>Experience world-renowned surf breaks and laid-back beach cafes. Ask us for our budget-friendly private rides to Madiha.</p>
-            </div>
-            <div class="explore-card">
-                <span class="explore-time">Low-Cost Transport Available</span>
-                <h4>Ahangama Beach & Surfing</h4>
-                <p>Planning a day trip to Ahangama's famous surf spots and stilt fishermen? We offer discounted drop-offs and round-trip transport.</p>
-            </div>
-            <div class="explore-card">
-                <span class="explore-time">Special Safari Packages</span>
-                <h4>Yala Safari & Kataragama</h4>
-                <p>Experience thrilling 4x4 leopard & elephant safaris at Yala National Park and visit the sacred Kataragama temple with full transport arranged.</p>
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+        <img src="1.jpg" alt="Ovindee Residence Tangalle" class="absolute inset-0 w-full h-full object-cover scale-105">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 max-w-4xl px-6 mt-16">
+            <p class="text-xs md:text-sm uppercase tracking-[0.4em] text-amber-400 mb-4">Southern Coast • Sri Lanka</p>
+            <h1 class="text-5xl md:text-7xl font-normal tracking-wide leading-tight mb-6">
+                Refined Coastal Serenity in Tangalle
+            </h1>
+            <p class="text-sm md:text-base text-stone-200 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+                Experience warm Sri Lankan hospitality paired with serene comfort. Steps away from Tangalle’s golden beaches, vibrant markets, and historic fishing coast.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#book" class="gold-bg text-stone-950 font-semibold text-xs uppercase tracking-widest px-8 py-4 hover:bg-amber-500 transition">
+                    Book Direct • Best Rate
+                </a>
+                <a href="tel:+94777211784" class="border border-white/60 hover:border-amber-400 hover:text-amber-400 text-xs uppercase tracking-widest px-8 py-4 transition">
+                    Call 077 721 1784
+                </a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <a href="#" class="logo">OVINDI <span>RESIDENCIES</span></a>
-                <p style="margin-top: 15px;">A boutique coastal retreat offering warmth, cleanliness, and comfort in Tangalle, Sri Lanka.</p>
+    <!-- Quick Info Bar -->
+    <section class="bg-stone-900 text-stone-200 py-6 border-b border-stone-800">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-xs uppercase tracking-widest">
+            <div>
+                <span class="block text-amber-400 mb-1">Check-In</span>
+                <span>From 2:00 PM</span>
             </div>
-            <div class="footer-col">
-                <h4>Direct Reservations</h4>
-                <p>📞 WhatsApp / Call 1: <a href="https://wa.me" target="_blank">+94 77 721 1784</a></p>
-                <p>📞 WhatsApp / Call 2: <a href="https://wa.me" target="_blank">+94 71 479 3555</a></p>
-                <p>📍 Location: Tangalle, Southern Province, Sri Lanka</p>
-                <p>🕒 Check-in: 2:00 PM | Check-out: 11:00 AM</p>
+            <div>
+                <span class="block text-amber-400 mb-1">Check-Out</span>
+                <span>By 11:00 AM</span>
             </div>
-            <div class="footer-col">
-                <h4>Guest Services & Offers</h4>
-                <p>• LKR 25,000 Airport (CMB) Pickup + FREE Dinner & Breakfast</p>
-                <p>• Discounted Transport to Polhena, Madiha & Ahangama</p>
-                <p>• Yala National Park 4x4 Safari Arrangements</p>
-                <p>• Kataragama & Southern Coast Private Tours</p>
+            <div>
+                <span class="block text-amber-400 mb-1">Direct Booking</span>
+                <span>Zero Middleman Fees</span>
+            </div>
+            <div>
+                <span class="block text-amber-400 mb-1">Concierge</span>
+                <span>English & Sinhala</span>
             </div>
         </div>
-        <div class="footer-bottom">&copy; 2026 Ovindi Residencies Tangalle. All Rights Reserved.</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <p class="text-xs uppercase tracking-[0.3em] gold-text font-semibold mb-3">Your Home in Tangalle</p>
+                <h2 class="text-4xl md:text-5xl font-normal text-stone-900 mb-6 leading-tight">
+                    Intimate Luxury & Authentic Local Warmth
+                </h2>
+                <p class="text-stone-600 font-light leading-relaxed mb-6">
+                    Ovindee Residence is a private family-run boutique homestay nestled near Tangalle’s pristine shoreline. Whether you seek tranquil relaxation in our air-conditioned sanctuary or curated local tips on hidden beaches and dining, we tailor every moment to your stay.
+                </p>
+                <p class="text-stone-600 font-light leading-relaxed mb-8">
+                    Need flexible check-in or late departure? Contact us directly and we will gladly arrange it for you.
+                </p>
+                <div class="border-l-2 gold-border pl-5">
+                    <p class="serif italic text-xl text-stone-800">"Stay with a local family and book directly with us—no middleman, just genuine care."</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="2.jpg" alt="Room View" class="w-full h-80 object-cover shadow-lg">
+                <img src="3.jpg" alt="Interior Detail" class="w-full h-80 object-cover shadow-lg mt-8">
+            </div>
+        </div>
+    </section>
+    <!-- Rooms & Bathroom Showcase -->
+    <section id="rooms" class="py-24 bg-stone-900 text-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <p class="text-xs uppercase tracking-[0.3em] text-amber-400 mb-3">Accommodation</p>
+                <h2 class="text-4xl md:text-5xl font-normal mb-4">The Residence Suite & Bath</h2>
+                <p class="text-stone-400 font-light text-sm">Thoughtfully appointed spaces crafted with Sri Lankan teak wood, cool air-conditioning, and modern marble finishes.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Bedroom Card -->
+                <div class="bg-stone-950 border border-stone-800 overflow-hidden group">
+                    <div class="overflow-hidden h-80">
+                        <img src="4.jpg" alt="Teak Double Bedroom" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl text-amber-400 mb-3">The Teak Garden Room</h3>
+                        <p class="text-stone-400 text-sm font-light leading-relaxed mb-6">
+                            Featuring a handcrafted double bed with solid teak frame, dressing table with full mirror, spacious wardrobe, blackout curtains, climate-controlled air conditioning, and direct garden door access.
+                        </p>
+                        <ul class="text-xs uppercase tracking-wider text-stone-300 space-y-2 border-t border-stone-800 pt-4">
+                            <li>• Handcrafted Teak Double Bed</li>
+                            <li>• Individually Controlled Air Conditioning</li>
+                            <li>• Private Garden Entrance & Dressing Area</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bathroom Card -->
+                <div class="bg-stone-950 border border-stone-800 overflow-hidden group">
+                    <div class="overflow-hidden h-80">
+                        <img src="5.jpg" alt="Marble Private Bathroom" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl text-amber-400 mb-3">Private Marble En-Suite</h3>
+                        <p class="text-stone-400 text-sm font-light leading-relaxed mb-6">
+                            Refresh in an immaculate marble-tiled private bathroom equipped with a modern shower panel, instant hot water heater, sleek basin vanity, and natural ventilation.
+                        </p>
+                        <ul class="text-xs uppercase tracking-wider text-stone-300 space-y-2 border-t border-stone-800 pt-4">
+                            <li>• Luxury Floor-to-Ceiling Marble Tiles</li>
+                            <li>• High-Pressure Hot Water Shower Panel</li>
+                            <li>• Fresh Towels & Modern Vanity Basin</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Grid -->
+    <section id="amenities" class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-14">
+            <p class="text-xs uppercase tracking-[0.3em] gold-text font-semibold mb-2">Comforts & Standards</p>
+            <h2 class="text-4xl font-normal">Good To Know</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="p-6 bg-white border border-stone-200 shadow-sm">
+                <h4 class="serif text-2xl mb-2">Prime Tangalle Location</h4>
+                <p class="text-sm text-stone-600 font-light">Minutes from Tangalle’s golden beaches, local markets, and scenic fishing harbor.</p>
+            </div>
+            <div class="p-6 bg-white border border-stone-200 shadow-sm">
+                <h4 class="serif text-2xl mb-2">Air-Conditioned Comfort</h4>
+                <p class="text-sm text-stone-600 font-light">Cool, peaceful rooms designed for restful nights after tropical adventures.</p>
+            </div>
+            <div class="p-6 bg-white border border-stone-200 shadow-sm">
+                <h4 class="serif text-2xl mb-2">Hot Water En-Suite</h4>
+                <p class="text-sm text-stone-600 font-light">Spotless private marble bathroom with reliable hot water shower.</p>
+            </div>
+            <div class="p-6 bg-white border border-stone-200 shadow-sm">
+                <h4 class="serif text-2xl mb-2">Thoughtful Furnishings</h4>
+                <p class="text-sm text-stone-600 font-light">Full wardrobe, teak dressing table, mirror, and dedicated towel rack.</p>
+            </div>
+            <div class="p-6 bg-white border border-stone-200 shadow-sm">
+                <h4 class="serif text-2xl mb-2">Direct Personal Booking</h4>
+                <p class="text-sm text-stone-600 font-light">Reserve directly via WhatsApp or phone with zero commission fees.</p>
+            </div>
+            <div class="p-6 bg-white border border-stone-200 shadow-sm">
+                <h4 class="serif text-2xl mb-2">Bilingual Hosts</h4>
+                <p class="text-sm text-stone-600 font-light">Fluent assistance in both English and Sinhala throughout your stay.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-stone-100 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <p class="text-xs uppercase tracking-[0.3em] gold-text font-semibold mb-2">Visual Tour</p>
+                <h2 class="text-4xl font-normal">Inside Ovindee Residence</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="6.jpg" alt="Gallery 6" class="w-full h-64 object-cover hover:opacity-90 transition">
+                <img src="7.jpg" alt="Gallery 7" class="w-full h-64 object-cover hover:opacity-90 transition">
+                <img src="8.jpg" alt="Gallery 8" class="w-full h-64 object-cover hover:opacity-90 transition">
+                <img src="10.jpg" alt="Gallery 10" class="w-full h-64 object-cover hover:opacity-90 transition">
+            </div>
+        </div>
+    </section>
+    <!-- WhatsApp Booking Section -->
+    <section id="book" class="py-24 px-6 bg-stone-950 text-white">
+        <div class="max-w-3xl mx-auto border border-stone-800 bg-stone-900/60 p-8 md:p-14">
+            <div class="text-center mb-10">
+                <p class="text-xs uppercase tracking-[0.3em] text-amber-400 mb-2">Direct Concierge Reservation</p>
+                <h2 class="text-4xl md:text-5xl font-normal mb-3">Book Your Stay</h2>
+                <p class="text-stone-400 text-sm font-light">Select your dates below to send an instant reservation inquiry directly to our WhatsApp (+94 77 721 1784).</p>
+            </div>
+
+            <form id="bookingForm" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Check-In Date</label>
+                        <input type="date" id="checkin" required class="w-full bg-stone-950 border border-stone-700 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Check-Out Date</label>
+                        <input type="date" id="checkout" required class="w-full bg-stone-950 border border-stone-700 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Your Full Name</label>
+                        <input type="text" id="guestName" placeholder="e.g. Kasun Perera" required class="w-full bg-stone-950 border border-stone-700 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Number of Guests</label>
+                        <select id="guests" class="w-full bg-stone-950 border border-stone-700 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                            <option value="1 Guest">1 Guest</option>
+                            <option value="2 Guests" selected>2 Guests</option>
+                            <option value="3 Guests">3 Guests</option>
+                            <option value="4 Guests">4 Guests</option>
+                            <option value="More than 4 Guests">More than 4 Guests</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Special Requests (Optional)</label>
+                    <textarea id="notes" rows="3" placeholder="Early check-in, airport pickup, or any questions..." class="w-full bg-stone-950 border border-stone-700 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400"></textarea>
+                </div>
+
+                <button type="submit" class="w-full gold-bg hover:bg-amber-500 text-stone-950 font-semibold text-xs uppercase tracking-[0.2em] py-4 transition">
+                    Send Reservation via WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-stone-400 py-12 px-6 border-t border-stone-900 text-center text-xs">
+        <p class="serif text-2xl text-amber-400 tracking-widest uppercase mb-2">Ovindee Residence</p>
+        <p class="mb-4">Tangalle, Southern Province, Sri Lanka • Tel / WhatsApp: <a href="tel:+94777211784" class="text-white hover:text-amber-400">077 721 1784</a></p>
+        <p class="text-stone-600">© 2026 Ovindee Residence Tangalle. All Rights Reserved.</p>
     </footer>
 
-    <a href="https://wa.me?text=Hello%20Ovindi%20Residencies%20Tangalle!%20I%20would%20like%20to%20inquire%20about%20a%20stay%20or%20transport%20arrangements." class="whatsapp-float" target="_blank">💬 Chat with Concierge</a>
-
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()"><span class="lightbox-close">&times;</span><img id="lightbox-img" src="" alt="Full View"></div>
-
+    <!-- WhatsApp Script -->
     <script>
-        function bookViaWhatsApp() {
-            const checkin = document.getElementById('checkin').value || 'Flexible';
-            const checkout = document.getElementById('checkout').value || 'Flexible';
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            const name = document.getElementById('guestName').value;
             const guests = document.getElementById('guests').value;
-            const message = `Hello Ovindi Residencies Tangalle! I would like to check room availability:%0A- Check-in: ${checkin}%0A- Check-out: ${checkout}%0A- Guests: ${guests}`;
-            window.open(`https://wa.me?text=${message}`, '_blank');
-        }
-        function openLightbox(src) { document.getElementById('lightbox-img').src = src; document.getElementById('lightbox').style.display = 'flex'; }
-        function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+            const notes = document.getElementById('notes').value;
+
+            const message = `Hello Ovindee Residence! I would like to book a stay.%0A%0A*Name:* ${name}%0A*Check-in:* ${checkin}%0A*Check-out:* ${checkout}%0A*Guests:* ${guests}%0A*Notes:* ${notes || 'None'}`;
+            window.open(`https://wa.me{message}`, '_blank');
+        });
     </script>
 </body>
 </html>
