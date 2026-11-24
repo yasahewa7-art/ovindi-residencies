@@ -15,6 +15,7 @@
         .gold-bg { background-color: #B48E43; }
         .gold-border { border-color: #B48E43; }
         .hero-overlay { background: linear-gradient(to bottom, rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.75)); }
+        input[type="date"] { color-scheme: dark; }
     </style>
 </head>
 <body class="antialiased">
@@ -32,11 +33,26 @@
                 <a href="#amenities" class="hover:text-amber-400 transition">Amenities</a>
                 <a href="#gallery" class="hover:text-amber-400 transition">Gallery</a>
             </nav>
-            <a href="#book" class="gold-bg hover:bg-amber-600 text-stone-950 font-semibold text-xs uppercase tracking-widest px-5 py-3 transition">
-                Reserve Now
-            </a>
+            <div class="flex items-center space-x-3">
+                <a href="#book" class="gold-bg hover:bg-amber-600 text-stone-950 font-semibold text-xs uppercase tracking-widest px-4 py-2.5 md:px-5 md:py-3 transition">
+                    Reserve Now
+                </a>
+                <button id="mobileMenuBtn" class="md:hidden text-stone-300 hover:text-amber-400 focus:outline-none p-1">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-stone-950 border-t border-stone-800 px-6 py-4 space-y-3 text-xs uppercase tracking-widest text-stone-300">
+            <a href="#about" class="block hover:text-amber-400 py-1">The Sanctuary</a>
+            <a href="#rooms" class="block hover:text-amber-400 py-1">Suites & Bath</a>
+            <a href="#amenities" class="block hover:text-amber-400 py-1">Amenities</a>
+            <a href="#gallery" class="block hover:text-amber-400 py-1">Gallery</a>
         </div>
     </header>
+
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
         <img src="1.jpg" alt="Ovindee Residence Tangalle" class="absolute inset-0 w-full h-full object-cover scale-105">
@@ -114,7 +130,6 @@
                 <h2 class="text-4xl md:text-5xl font-normal mb-4">The Residence Suite & Bath</h2>
                 <p class="text-stone-400 font-light text-sm">Thoughtfully appointed spaces crafted with Sri Lankan teak wood, cool air-conditioning, and modern marble finishes.</p>
             </div>
-
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Bedroom Card -->
                 <div class="bg-stone-950 border border-stone-800 overflow-hidden group">
@@ -216,22 +231,22 @@
             <form id="bookingForm" class="space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Check-In Date</label>
+                        <label for="checkin" class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Check-In Date</label>
                         <input type="date" id="checkin" required class="w-full bg-stone-950 border border-stone-700 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400">
                     </div>
                     <div>
-                        <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Check-Out Date</label>
+                        <label for="checkout" class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Check-Out Date</label>
                         <input type="date" id="checkout" required class="w-full bg-stone-950 border border-stone-700 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400">
                     </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Your Full Name</label>
+                        <label for="guestName" class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Your Full Name</label>
                         <input type="text" id="guestName" placeholder="e.g. Kasun Perera" required class="w-full bg-stone-950 border border-stone-700 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400">
                     </div>
                     <div>
-                        <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Number of Guests</label>
+                        <label for="guests" class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Number of Guests</label>
                         <select id="guests" class="w-full bg-stone-950 border border-stone-700 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400">
                             <option value="1 Guest">1 Guest</option>
                             <option value="2 Guests" selected>2 Guests</option>
@@ -243,7 +258,7 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Special Requests (Optional)</label>
+                    <label for="notes" class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Special Requests (Optional)</label>
                     <textarea id="notes" rows="3" placeholder="Early check-in, airport pickup, or any questions..." class="w-full bg-stone-950 border border-stone-700 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400"></textarea>
                 </div>
 
@@ -261,18 +276,55 @@
         <p class="text-stone-600">© 2026 Ovindee Residence Tangalle. All Rights Reserved.</p>
     </footer>
 
-    <!-- WhatsApp Script -->
+    <!-- Scripts -->
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Date Validation (Prevent past dates)
+        const checkinInput = document.getElementById('checkin');
+        const checkoutInput = document.getElementById('checkout');
+        const today = new Date().toISOString().split('T')[0];
+        checkinInput.setAttribute('min', today);
+        checkoutInput.setAttribute('min', today);
+
+        checkinInput.addEventListener('change', function() {
+            checkoutInput.setAttribute('min', this.value);
+            if (checkoutInput.value && checkoutInput.value <= this.value) {
+                checkoutInput.value = '';
+            }
+        });
+
+        // Fixed WhatsApp Booking Script
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const checkin = document.getElementById('checkin').value;
-            const checkout = document.getElementById('checkout').value;
-            const name = document.getElementById('guestName').value;
+            const checkin = checkinInput.value;
+            const checkout = checkoutInput.value;
+            const name = document.getElementById('guestName').value.trim();
             const guests = document.getElementById('guests').value;
-            const notes = document.getElementById('notes').value;
+            const notes = document.getElementById('notes').value.trim();
 
-            const message = `Hello Ovindee Residence! I would like to book a stay.%0A%0A*Name:* ${name}%0A*Check-in:* ${checkin}%0A*Check-out:* ${checkout}%0A*Guests:* ${guests}%0A*Notes:* ${notes || 'None'}`;
-            window.open(`https://wa.me{message}`, '_blank');
+            if (checkout <= checkin) {
+                alert('Check-out date must be after the check-in date.');
+                return;
+            }
+
+            const phoneNumber = '94777211784';
+            const message = `Hello Ovindee Residence! I would like to book a stay.\n\n*Name:* ${name}\n*Check-in:* ${checkin}\n*Check-out:* ${checkout}\n*Guests:* ${guests}\n*Notes:* ${notes || 'None'}`;
+            const whatsappUrl = `https://wa.me{phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappUrl, '_blank');
         });
     </script>
 </body>
